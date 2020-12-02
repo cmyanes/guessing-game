@@ -13,16 +13,16 @@ function isnumber {
 }
 
 # compares two numbers (arguments)
-# if $1=$2 returns 0; if $1>$2 returns 1; if $1<$2 returns -1
+# if $1>$2 returns 1; if $1<$2 returns -1; if $1=$2 returns 0
 function compare {
-	if [[ $1 -eq $2 ]]
-	then
-		echo 0
-	elif [[ $1 -gt $2 ]]
+	if [[ $1 -gt $2 ]]
 	then
 		echo 1
-	else
+	elif [[ $1 -lt $2 ]]
+	then
 		echo -1
+	else
+		echo 0
 	fi
 }
 
@@ -41,17 +41,15 @@ do
 
 	nfiles=$(ls -1 $PWD | wc -l)
 	
-	comp=$(compare $n $nfiles)
-
-	if [[ $comp -gt 0 ]]
-	then
+	case $(compare $n $nfiles) in
+	1)
 		echo Your guess was too high
-	elif [[ $comp -lt 0 ]]
-	then
+		;;
+	-1)
 		echo Your guess was too low
-	else
+		;;
+	0)
 		echo Congratulations! You guessed it!
-		break
-	fi
-	echo Try again!
+		break;;
+	esac
 done
