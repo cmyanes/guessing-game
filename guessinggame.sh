@@ -43,10 +43,10 @@ do
 	
 	case $(compare $n $nfiles) in
 	1)
-		echo Your guess was too high
+		echo Your guess was too high. Try again.
 		;;
 	-1)
-		echo Your guess was too low
+		echo Your guess was too low. Try again
 		;;
 	0)
 		echo Congratulations! You guessed it!
