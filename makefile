@@ -1,6 +1,6 @@
 
 README.md: guessinggame.sh
-	echo "## Guessing Game" > $@
+	echo "> $#### Guessing Game" > $@
 	echo ">" >> $@
 	echo "> - files: guessinggame.sh" >> $@
 	echo "> - lines of code: $$(cat guessinggame.sh | wc -l)" >> $@
