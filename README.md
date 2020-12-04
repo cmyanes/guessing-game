@@ -1,6 +1,6 @@
-> ### Guessing Game
+### Guessing Game
 >
 > - files: guessinggame.sh
 > - lines of code: 49
 >
-> (info updated:  4 dic 2020 23:48:20 CET)
+> (info updated:  4 dic 2020 23:56:29 CET)
