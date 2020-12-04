@@ -1,8 +1,6 @@
 #!/user/bin/env bash
 # File: guessinggame.sh
 
-# checks if the argument is a natural number
-# returns true if it is a natural number; false otherwise
 function isnumber {
 	if [[ $1 =~ ^[0-9]+$ ]]
 	then
@@ -12,8 +10,6 @@ function isnumber {
 	fi
 }
 
-# compares two numbers (arguments)
-# if $1>$2 returns 1; if $1<$2 returns -1; if $1=$2 returns 0
 function compare {
 	if [[ $1 -gt $2 ]]
 	then
@@ -38,9 +34,7 @@ do
 			break
 		fi
 	done
-
 	nfiles=$(ls -1 $PWD | wc -l)
-	
 	case $(compare $n $nfiles) in
 	1)
 		echo Your guess was too high. Try again.
